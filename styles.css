@@ -461,6 +461,22 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     transition: opacity var(--transition);
 }
 .gallery-card:hover .gallery-overlay { opacity: 1; }
+.badge-hit {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #e02020;
+    color: #fff;
+    font-family: var(--ff-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 6px;
+    z-index: 2;
+    box-shadow: 0 2px 8px rgba(224, 32, 32, 0.4);
+}
 .gallery-overlay span {
     color: var(--color-white);
     font-size: 13px;
