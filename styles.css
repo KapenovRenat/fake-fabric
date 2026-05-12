@@ -240,8 +240,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     inset: 0;
     background: linear-gradient(
         135deg,
-        rgba(28, 28, 30, 0.82) 0%,
-        rgba(28, 28, 30, 0.55) 60%,
+        rgba(28, 28, 30, 0.82) 20%,
+        rgba(28, 28, 30, 0.55) 90%,
         rgba(28, 28, 30, 0.3) 100%
     );
 }
@@ -516,11 +516,20 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ════════════════════════════════════════ */
 .partners { background: var(--color-white); }
 
-.partners-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
+.partners-pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 16px;
 }
+.partners-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+.partners-row--2 { max-width: 800px; }
+.partners-row--1 { max-width: 380px; }
 .partner-logo {
     border-radius: var(--radius-sm);
     overflow: hidden;
@@ -531,7 +540,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     justify-content: center;
     background: #f8f8f8;
     border: 1px solid #d3d3d3;
-    padding: 15px 0;
+    padding: 15px 25px;
 
     .hoff-img {
         width: 100px;
@@ -824,7 +833,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ════════════════════════════════════════ */
 @media (max-width: 1024px) {
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-    .partners-grid { grid-template-columns: repeat(3, 1fr); }
+    .partners-row--2 { max-width: 640px; }
+    .partners-row--1 { max-width: 300px; }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
@@ -869,7 +879,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     .gallery-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
 
     /* Partners */
-    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    .partners-row { flex-wrap: wrap; }
+    .partner-logo { flex: 1 1 160px; }
 
     /* Certs */
     .cert-grid { grid-template-columns: 1fr; }
@@ -888,7 +899,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
    ════════════════════════════════════════ */
 @media (max-width: 480px) {
     .gallery-grid { grid-template-columns: 1fr; }
-    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+    .partners-row { flex-wrap: wrap; }
+    .partner-logo { flex: 1 1 160px; }
     .about-stats { grid-template-columns: 1fr 1fr; }
     .section-title { font-size: 26px; }
 }
