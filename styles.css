@@ -531,7 +531,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     justify-content: center;
     background: #f8f8f8;
     border: 1px solid #d3d3d3;
+    padding: 15px 0;
 
+    .hoff-img {
+        width: 100px;
+    }
+
+    svg {
+        width: 160px!important;
+    }
     img {
         width: 160px;
     }
@@ -788,7 +796,11 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     color: rgba(255,255,255,0.4);
     margin-bottom: 14px;
 }
-.footer-partner-col { display: flex; flex-direction: column; }
+.footer-partner-col { display: flex; flex-direction: column;
+    img {
+        width: 160px;
+    }
+}
 
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.08);
