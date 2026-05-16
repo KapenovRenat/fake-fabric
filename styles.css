@@ -68,7 +68,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     margin-bottom: 12px;
 }
 .section-title {
-    font-family: var(--ff-serif);
+    font-family: var(--ff-sans);
     font-size: clamp(28px, 4vw, 42px);
     font-weight: 700;
     color: var(--color-dark);
@@ -269,7 +269,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     border-radius: 100px;
 }
 .hero-title {
-    font-family: var(--ff-serif);
+    font-family: var(--ff-sans);
     font-size: clamp(36px, 6vw, 68px);
     font-weight: 700;
     color: var(--color-white);
@@ -341,12 +341,15 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .stat-number {
     display: block;
-    font-family: var(--ff-serif);
+    font-family: var(--ff-sans);
     font-size: 36px;
     font-weight: 700;
+    font-variant-numeric: tabular-nums;
     color: var(--color-dark);
     line-height: 1;
+    letter-spacing: -0.5px;
 }
+.stat-number--sm { font-size: 26px; letter-spacing: -0.3px; }
 .stat-unit {
     display: block;
     font-size: 13px;
@@ -405,7 +408,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 }
 .advantage-card:hover .advantage-icon { background: rgba(232, 160, 32, 0.2); }
 .advantage-card h3 {
-    font-family: var(--ff-serif);
+    font-family: var(--ff-sans);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -558,15 +561,9 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     border: 1px solid #d3d3d3;
     padding: 15px 25px;
 
-    .hoff-img {
-        width: 100px;
-    }
 
-    svg {
-        width: 160px!important;
-    }
     img {
-        width: 160px;
+        width: 200px;
     }
 }
 .partner-logo:hover {
@@ -643,7 +640,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     margin-bottom: 10px;
 }
 .cert-body h3 {
-    font-family: var(--ff-serif);
+    font-family: var(--ff-sans);
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 10px;
