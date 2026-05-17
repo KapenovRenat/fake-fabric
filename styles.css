@@ -917,3 +917,14 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     .about-stats { grid-template-columns: 1fr 1fr; }
     .section-title { font-size: 26px; }
 }
+
+
+.form-notice {
+    margin-top: 16px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: center;
+}
+.form-notice.success { background: #e6f4ea; color: #2d7a3a; }
+.form-notice.error   { background: #fdecea; color: #b71c1c; }

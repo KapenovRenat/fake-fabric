@@ -363,6 +363,7 @@
                     <button type="submit" class="btn btn-primary">Отправить заявку</button>
                 </div>
             </form>
+            <div id="form-notice" class="form-notice" style="display:none"></div>
         </div>
     </section>
 
@@ -479,6 +480,24 @@
         }, { threshold: 0.12 });
 
         document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
+
+        // Form status notification
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const status = params.get('status');
+            if (!status) return;
+            const el = document.getElementById('form-notice');
+            if (status === 'success') {
+                el.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
+                el.classList.add('success');
+            } else {
+                el.textContent = 'Ошибка отправки. Пожалуйста, попробуйте позже или позвоните нам.';
+                el.classList.add('error');
+            }
+            el.style.display = 'block';
+            history.replaceState(null, '', window.location.pathname);
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        })();
     </script>
 
 </body>
