@@ -18,7 +18,7 @@ if (empty($name) || empty($phone)) {
 
 $subject = "Новая заявка с сайта — Fenix Mebel";
 $body    = "Имя: $name\nТелефон: $phone\nСообщение:\n$message";
-$headers = "From: noreply@" . $_SERVER['HTTP_HOST'] . "\r\n" .
+$headers = "From: " . $_SERVER['HTTP_HOST'] . "\r\n" .
            "Reply-To: $phone\r\n" .
            "Content-Type: text/plain; charset=UTF-8";
 
