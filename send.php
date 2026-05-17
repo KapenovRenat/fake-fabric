@@ -1,6 +1,8 @@
 <?php
+header('Content-Type: application/json; charset=UTF-8');
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.html');
+    echo json_encode(['ok' => false]);
     exit;
 }
 
@@ -10,19 +12,14 @@ $phone   = htmlspecialchars(trim($_POST['phone']   ?? ''));
 $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
 if (empty($name) || empty($phone)) {
-    header('Location: index.html?status=error');
+    echo json_encode(['ok' => false]);
     exit;
 }
 
 $subject = "Новая заявка с сайта — Fenix Mebel";
 $body    = "Имя: $name\nТелефон: $phone\nСообщение:\n$message";
-$headers = "From: " . $_SERVER['HTTP_HOST'] . "\r\n" .
+$headers = "From: noreply@" . $_SERVER['HTTP_HOST'] . "\r\n" .
            "Reply-To: $phone\r\n" .
            "Content-Type: text/plain; charset=UTF-8";
 
-if (mail($to, $subject, $body, $headers)) {
-    header('Location: index.html?status=success');
-} else {
-    header('Location: index.html?status=error');
-}
-exit;
+echo json_encode(['ok' => mail($to, $subject, $body, $headers)]);

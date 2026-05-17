@@ -481,23 +481,41 @@
 
         document.querySelectorAll('.fade-in').forEach(el => fadeObserver.observe(el));
 
-        // Form status notification
-        (function () {
-            const params = new URLSearchParams(window.location.search);
-            const status = params.get('status');
-            if (!status) return;
-            const el = document.getElementById('form-notice');
-            if (status === 'success') {
-                el.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
-                el.classList.add('success');
-            } else {
-                el.textContent = 'Ошибка отправки. Пожалуйста, попробуйте позже или позвоните нам.';
-                el.classList.add('error');
-            }
-            el.style.display = 'block';
-            history.replaceState(null, '', window.location.pathname);
-            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        })();
+        // Contact form — AJAX submit
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = this;
+            const notice = document.getElementById('form-notice');
+            const btn = form.querySelector('button[type="submit"]');
+
+            notice.style.display = 'none';
+            notice.className = 'form-notice';
+            btn.disabled = true;
+            btn.textContent = 'Отправка…';
+
+            fetch('send.php', { method: 'POST', body: new FormData(form) })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.ok) {
+                        notice.textContent = 'Заявка отправлена! Мы свяжемся с вами в ближайшее время.';
+                        notice.classList.add('success');
+                        form.reset();
+                    } else {
+                        notice.textContent = 'Ошибка отправки. Пожалуйста, попробуйте позже или позвоните нам.';
+                        notice.classList.add('error');
+                    }
+                })
+                .catch(() => {
+                    notice.textContent = 'Ошибка отправки. Пожалуйста, попробуйте позже или позвоните нам.';
+                    notice.classList.add('error');
+                })
+                .finally(() => {
+                    notice.style.display = 'block';
+                    notice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    btn.disabled = false;
+                    btn.textContent = 'Отправить заявку';
+                });
+        });
     </script>
 
 </body>
