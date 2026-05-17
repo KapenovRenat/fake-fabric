@@ -18,8 +18,7 @@ if (empty($name) || empty($phone)) {
 
 $subject = "Новая заявка с сайта — Fenix Mebel";
 $body    = "Имя: $name\nТелефон: $phone\nСообщение:\n$message";
-$headers = "From: " . $_SERVER['HTTP_HOST'] . "\r\n" .
-           "Reply-To: $phone\r\n" .
+$headers = "From: noreply@" . $_SERVER['HTTP_HOST'] . "\r\n" .
            "Content-Type: text/plain; charset=UTF-8";
 
 echo json_encode(['ok' => mail($to, $subject, $body, $headers)]);
