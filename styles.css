@@ -240,7 +240,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     inset: 0;
     background: linear-gradient(
         135deg,
-        rgba(28, 28, 30, 0.82) 20%,
+        rgba(28, 28, 30, 0.92) 20%,
         rgba(28, 28, 30, 0.55) 90%,
         rgba(28, 28, 30, 0.3) 100%
     );
@@ -248,7 +248,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 720px;
+    /*max-width: 720px;*/
     padding-top: 80px;
     animation: heroFadeIn 1s ease 0.2s both;
 }
@@ -576,12 +576,6 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     img {
         width: 160px;
     }
-    border: none;
-    background: #29292b;
-    box-shadow: 0 4px 16px rgba(232, 160, 32, 0.2);
-}
-.partner-logo--radeya:hover {
-    box-shadow: 0 8px 28px rgba(232, 160, 32, 0.35);
 }
 
 /* ════════════════════════════════════════
@@ -908,6 +902,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
         padding-bottom: 32px;
     }
     .footer-bottom-inner { flex-direction: column; text-align: center; }
+    .hero-content {max-width: 720px;}
 }
 
 /* ════════════════════════════════════════
@@ -919,6 +914,8 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
     .partner-logo { flex: 1 1 160px; }
     .about-stats { grid-template-columns: 1fr 1fr; }
     .section-title { font-size: 26px; }
+
+    .hero-content {max-width: 720px;}
 }
 
 
