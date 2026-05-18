@@ -566,6 +566,18 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
         width: 200px;
     }
 }
+
+.mebel-big-img {
+    img {
+        width: 950px;
+    }
+}
+
+.mebel-three {
+   img {
+       width: 50px;
+   }
+}
 .partner-logo:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow);
