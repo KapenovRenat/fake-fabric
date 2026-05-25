@@ -52,7 +52,7 @@
 
     <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
     <section class="hero" id="hero">
-        <div class="hero-bg" style="background-image: url('./img/bg-1.jpg')"></div>
+        <div class="hero-bg" style="background-image: url('./img/bg-1.png')"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content container">
             <span class="hero-label">ООО «Феникс Мебель» · Новосибирск</span>
